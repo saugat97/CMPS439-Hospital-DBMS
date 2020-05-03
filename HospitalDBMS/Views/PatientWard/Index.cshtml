@@ -1,13 +1,13 @@
-﻿@model IEnumerable<HospitalDBMS.Models.Nurse>
+﻿@model IEnumerable<HospitalDBMS.Models.Patient>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2><b><u>Nurse Table</u></b></h2>
+<h2><b><u>Patient Ward Table</u></b></h2>
 
 <p>
-    @Html.ActionLink("Add New Nurse", "Create")
+    @Html.ActionLink("Add New Patient", "Create")
 </p>
 
 @using (Html.BeginForm())
@@ -17,7 +17,6 @@
         <input type="submit" value="Filter" />
     </p>
 }
-
 <table class="table">
     <tr>
         <th>
@@ -27,10 +26,19 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Contact)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Ward)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmitDateAndTime)
         </th>
     </tr>
 
@@ -44,15 +52,24 @@
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Contact)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ward.WardName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Nurse_Id })
-
-                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.DisplayFor(modelItem => item.AdmitDateAndTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Patient_Id })
+                @*|
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td>
         </tr>

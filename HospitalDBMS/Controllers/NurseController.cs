@@ -11,9 +11,15 @@ namespace HospitalDBMS.Controllers
     public class NurseController : Controller
     {
         // GET: Nurse
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(NurseWardDataAccess.GetAllNurses());
+            var nurses = NurseWardDataAccess.GetAllNurses();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                nurses = nurses.Where(x => x.Ward.WardName.StartsWith(searchString));
+            }
+            return View(nurses);
         }
 
         public ActionResult Edit(int id)

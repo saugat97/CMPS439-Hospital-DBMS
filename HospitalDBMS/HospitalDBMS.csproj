@@ -123,6 +123,8 @@
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NurseController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\PatientWardController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,12 +134,18 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Nurse.cs" />
     <Compile Include="Models\NurseWardDataAccess.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientReportDataAccess.cs" />
+    <Compile Include="Models\PatientWardDataAccess.cs" />
+    <Compile Include="Models\Report.cs" />
     <Compile Include="Models\StaffWardDataAccess.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\Ward.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DoctorDeptViewModel.cs" />
     <Compile Include="ViewModels\NurseWardViewModel.cs" />
+    <Compile Include="ViewModels\PatientReportViewModel.cs" />
+    <Compile Include="ViewModels\PatientWardViewModel.cs" />
     <Compile Include="ViewModels\StaffWardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +191,12 @@
     <Content Include="Views\Nurse\Index.cshtml" />
     <Content Include="Views\Nurse\Edit.cshtml" />
     <Content Include="Views\Nurse\Create.cshtml" />
+    <Content Include="Views\Patient\Index.cshtml" />
+    <Content Include="Views\Patient\Edit.cshtml" />
+    <Content Include="Views\Patient\Create.cshtml" />
+    <Content Include="Views\PatientWard\Index.cshtml" />
+    <Content Include="Views\PatientWard\Edit.cshtml" />
+    <Content Include="Views\PatientWard\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

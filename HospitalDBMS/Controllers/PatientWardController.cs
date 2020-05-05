@@ -13,7 +13,7 @@ namespace HospitalDBMS.Controllers
         // GET: PatientWard
         public ActionResult Index(string searchString)
         {
-            var patients = PatientReportDataAccess.GetAllPatients();
+            var patients = PatientWardDataAccess.GetAllPatients();
 
             if (!string.IsNullOrEmpty(searchString))
             {

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HospitalDBMS.Models.Ward>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2><b><u>Ward Table</u></b></h2>
+
+<p>
+    @Html.ActionLink("Add New Ward", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WardName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+       
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.WardName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Ward_No }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Ward_No })
+        </td>
+    </tr>
+}
+
+</table>

@@ -20,7 +20,7 @@ namespace HospitalDBMS.Models
             {
                 SqlCommand command = new SqlCommand(@"
                     SELECT
-                    Patient_Id, FirstName, LastName, Gender, Age, Contact, AdmitDateAndTime, Ward_Id, WardName
+                    Patient_Id, FirstName, LastName, Gender, Age, Contact, AdmitDateAndTime, Ward_No, WardName
                     FROM PATIENT 
                     JOIN WARD ON Ward_Id = Ward_No
                 ", connection);

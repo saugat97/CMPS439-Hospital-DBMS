@@ -27,8 +27,7 @@ namespace HospitalDBMS.Models
                         X.Department_Id,
                         X.Speciality,
                         X.Location,
-                        X.Contact,
-                        X.NoOfDoctors
+                        X.Contact
                     FROM DOCTOR D 
                     JOIN DEPARTMENT X ON X.Department_Id = D.Dept_Id", connection);
 
@@ -50,7 +49,6 @@ namespace HospitalDBMS.Models
                     newDepartment.Speciality = reader.GetString(5);
                     newDepartment.Location = reader.GetString(6);
                     newDepartment.Contact = reader.GetString(7);
-                    newDepartment.NoOfDoctors = reader.GetInt32(8);
 
                     newDoctor.Department = newDepartment;
 
